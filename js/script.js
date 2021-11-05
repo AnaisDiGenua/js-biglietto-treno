@@ -24,6 +24,18 @@ console.log(età);
 let prezzoIntero = kilometri * 0.21;
 console.log(prezzoIntero);
 
+//variabile prezzo minorenni
+let scontoMinorenni = prezzoIntero - (prezzoIntero * 20 / 100);
+console.log(scontoMinorenni);
+
+//variabile prezzo0ver65
+let scontoOver65 = prezzoIntero - (prezzoIntero * 40 / 100);
+console.log(scontoOver65);
+
+
+
+
+
 
 
 
