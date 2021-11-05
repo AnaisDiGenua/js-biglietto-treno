@@ -21,16 +21,19 @@ const età = parseInt(prompt('inserisci la tua età'));
 // console.log(età);
 
 //variabile prezzo intero
-let prezzoIntero = kilometri * 0.21;
-// console.log(prezzoIntero);
+let prezzoIntero = parseFloat(kilometri * 0.21).toFixed(2);
+console.log(prezzoIntero);
 
 //variabile prezzo minorenni
-let scontoMinorenni = prezzoIntero - (prezzoIntero * 20 / 100);
-// console.log(scontoMinorenni);
+let scontoMinorenni = parseFloat(prezzoIntero - (prezzoIntero * 20 / 100)).toFixed(2);
+console.log(scontoMinorenni);
 
 //variabile prezzo0ver65
-let scontoOver65 = prezzoIntero - (prezzoIntero * 40 / 100);
-// console.log(scontoOver65);
+let scontoOver65 = parseFloat(prezzoIntero - (prezzoIntero * 40 / 100)).toFixed(2);
+console.log(scontoOver65);
+
+
+
 
 
 //stampa del biglietto 
