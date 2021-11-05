@@ -14,26 +14,33 @@
 
 //variabile km che si vogliono percorrere
 const kilometri = parseFloat(prompt('inserisci i kilometri della tratta'));
-console.log(kilometri);
+// console.log(kilometri);
 
 //variabile età
 const età = parseInt(prompt('inserisci la tua età'));
-console.log(età);
+// console.log(età);
 
 //variabile prezzo intero
 let prezzoIntero = kilometri * 0.21;
-console.log(prezzoIntero);
+// console.log(prezzoIntero);
 
 //variabile prezzo minorenni
 let scontoMinorenni = prezzoIntero - (prezzoIntero * 20 / 100);
-console.log(scontoMinorenni);
+// console.log(scontoMinorenni);
 
 //variabile prezzo0ver65
 let scontoOver65 = prezzoIntero - (prezzoIntero * 40 / 100);
-console.log(scontoOver65);
+// console.log(scontoOver65);
 
 
-
+//stampa del biglietto 
+if (età <= 17) {
+    console.log('il prezzo del biglietto è ' + scontoMinorenni);
+} else if (età >= 65) {
+    console.log('il prezzo del biglietto è ' + scontoOver65);
+} else {
+    console.log('il prezzo del biglietto è ' + prezzoIntero);
+}
 
 
 
