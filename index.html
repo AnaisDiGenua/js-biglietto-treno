@@ -5,19 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"> 
     <title>Biglietto treno</title>
 </head>
 <body>
     
 
+    <div class="container">
+        <div class="box">
+            <div class="red-border"></div>
+            <!-- inizio box dati passeggero -->
+            <div class="box-dati">
+                <!-- inizio box in alto -->
+                <div class="box-dati-up">
+                    <div id="logo">
+                    <img src="img/trenitalia.png" alt="">
+                    </div>
+                    <div class="codice-biglietto">
+                        <span class="disappear">codice del biglietto:</span>
+                        <span id="codice" class="bold"></span>
+                    </div>
+                </div>
+                <!-- /box in alto -->
 
-
-
-
-
-
-
-
+                <!-- inizio box in basso -->
+                <div class="box-dati-down">
+                    <!-- inizio parte sinistra -->
+                    <div class="dati-left">
+                        <div class="nome-passeggero mb-5">
+                            <span>nome passeggero:</span>
+                            <span id="nome" class="bold inline-block"></span>
+                        </div>
+                        <div class="età-passeggero mb-5">
+                            <span>età passeggero:</span>
+                            <span id="età" class="bold inline-block"></span>
+                        </div>
+                        <div class="kilometri-tratta mb-5">
+                            <span>kilometri tratta:</span>
+                            <span id="km" class="bold inline-block"></span>
+                        </div>
+                        <div class="prezzo-biglietto">
+                            <span>prezzo del biglietto:</span>
+                            <span id="prezzo" class="bold"></span>
+                        </div>
+                    </div>
+                    <!-- inizio parte destra -->
+                    <div class="dati-right">
+                        <div class="qr-code">
+                            <img src="img/qr-code.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- /box in basso -->
+            </div>
+            <!--/box dati passeggero -->
+            <div class="red-border"></div>
+        </div>
+    </div>
 
 
 
