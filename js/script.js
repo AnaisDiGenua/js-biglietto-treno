@@ -63,7 +63,7 @@ if (eta <= 17) {
     document.getElementById('prezzo').innerHTML = scontoMinorenni + '€'
 } else if (eta >= 65) {
     console.log('il prezzo del biglietto è ' + scontoOver65);
-    document.getElementById('prezzo').innerHTML = ScontoOver65 + '€'
+    document.getElementById('prezzo').innerHTML = scontoOver65 + '€'
 } else {
     console.log('il prezzo del biglietto è ' + prezzoIntero);
     document.getElementById('prezzo').innerHTML = prezzoIntero + '€'
