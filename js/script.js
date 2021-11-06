@@ -17,47 +17,51 @@ nomePasseggero = nomePasseggero.toLowerCase().replace(/(?<= )[^\s]|^./g, a => a.
 document.getElementById('nome').innerHTML = nomePasseggero
 
 
+
 //variabile km che si vogliono percorrere
-const kilometri = parseFloat(prompt('inserisci i kilometri della tratta'));
+let kilometri = parseFloat(prompt('inserisci i kilometri della tratta'));
+// controllo carattere
+while ((isNaN(kilometri))) {
+    kilometri = prompt("Carattere non consentito. Riprovare");
+}
 document.getElementById('km').innerHTML = kilometri + ' km'
-// console.log(kilometri);
 
 
 //variabile età
-const età = parseInt(prompt('inserisci la tua età'));
-document.getElementById('età').innerHTML = età
-// console.log(età);
+let eta = parseInt(prompt('inserisci la tua età'));
+// controllo carattere
+while ((isNaN(eta))) {
+    eta = prompt("Carattere non consentito. Riprovare");
+}
+document.getElementById('età').innerHTML = eta
 
 
 //variabile prezzo intero
 let prezzoIntero = parseFloat(kilometri * 0.21).toFixed(2);
-// console.log(prezzoIntero);
 
 
 //variabile prezzo minorenni
 let scontoMinorenni = parseFloat(prezzoIntero - (prezzoIntero * 20 / 100)).toFixed(2);
-// console.log(scontoMinorenni);
 
 
 //variabile prezzo0ver65
 let scontoOver65 = parseFloat(prezzoIntero - (prezzoIntero * 40 / 100)).toFixed(2);
-// console.log(scontoOver65);
 
 
 // variabile codice biglietto random
 let codiceRandom = Math.floor(Math.random() * (29000 - 20000)) + 20000;
 document.getElementById('codice').innerHTML = codiceRandom
-// console.log('il numero casuale è' + codiceRandom);
+
 
 
 
 
 
 //stampa del biglietto 
-if (età <= 17) {
+if (eta <= 17) {
     console.log('il prezzo del biglietto è ' + scontoMinorenni);
     document.getElementById('prezzo').innerHTML = scontoMinorenni + '€'
-} else if (età >= 65) {
+} else if (eta >= 65) {
     console.log('il prezzo del biglietto è ' + scontoOver65);
     document.getElementById('prezzo').innerHTML = ScontoOver65 + '€'
 } else {
