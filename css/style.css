@@ -3,3 +3,95 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    font-family: 'Red Hat Mono', monospace;
+    background-color: #ececec;
+}
+.bold {
+    font-weight: bold;
+}
+.mb-5 {
+    margin-bottom: 10px;
+}
+.inline-block {
+    display: block;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.red-border {
+    min-height: 50px;
+    line-height: 50px;
+    background-color: #e31936;
+}
+.box-dati {
+    flex-grow: 1;
+}
+.box-dati img {
+    width: 100px;
+    vertical-align: middle;
+}
+.box-dati-up {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+.box-dati-up #codice {
+    font-size: 1.3rem;
+}
+.box-dati-up .codice-biglietto {
+    align-self: center;
+    margin-right: 20px;
+}
+.box-dati-up .codice-biglietto .disappear {
+    display: none;
+}
+.box-dati-down {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+}
+.box-dati-down #prezzo {
+    color: #e31936;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+
+
+
+@media screen and (min-width:576px) {
+    .box {
+        width: 500px;
+        height: 300px;
+    }
+    .box-dati-up {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .box-dati-up .codice-biglietto .disappear {
+        display: inline-block;
+        margin-left: 15px;
+    }
+    .box-dati-down {
+        padding: 10px 20px;
+    }
+    .inline-block {
+        display: inline-block;
+    }
+}
+
