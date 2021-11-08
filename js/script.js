@@ -5,71 +5,71 @@
 // Bonus: effettuate dei controlli sui dati di input
 
 
-// ? prezzo totale del biglietto
+//input: 
+// 1) km da percorrere
+// 2) età del passeggero
 
-//prezzo senza sconto = kilometri * 0.21
+// operazioni:
+// 1) calcolo del prezzo base: 0.21 x km da percorrere
+// 2) calcolo scontistica: 
+//    a) minorenne - sconto del 20%
+//    b) over 65 - sconto del 40%
+
+// output
+// Prezzo finale espresso in decimale con la precisione di 2 cifre
+
 
 
 
 // variabile nome
 let nomePasseggero = prompt('inserisci il tuo nome e cognome');
 nomePasseggero = nomePasseggero.toLowerCase().replace(/(?<= )[^\s]|^./g, a => a.toUpperCase());
-document.getElementById('nome').innerHTML = nomePasseggero
-
 
 
 //variabile km che si vogliono percorrere
 let kilometri = parseFloat(prompt('inserisci i kilometri della tratta'));
-// controllo carattere
-while ((isNaN(kilometri))) {
-    kilometri = prompt("Carattere non consentito. Riprovare");
-}
-document.getElementById('km').innerHTML = kilometri + ' km'
 
 
 //variabile età
 let eta = parseInt(prompt('inserisci la tua età'));
-// controllo carattere
-while ((isNaN(eta))) {
-    eta = prompt("Carattere non consentito. Riprovare");
-}
-document.getElementById('età').innerHTML = eta
 
 
 //variabile prezzo intero
-let prezzoIntero = parseFloat(kilometri * 0.21).toFixed(2);
-
-
-//variabile prezzo minorenni
-let scontoMinorenni = parseFloat(prezzoIntero - (prezzoIntero * 20 / 100)).toFixed(2);
-
-
-//variabile prezzo0ver65
-let scontoOver65 = parseFloat(prezzoIntero - (prezzoIntero * 40 / 100)).toFixed(2);
+let prezzo = parseFloat(kilometri * 0.21).toFixed(2);
 
 
 // variabile codice biglietto random
 let codiceRandom = Math.floor(Math.random() * (29000 - 20000)) + 20000;
-document.getElementById('codice').innerHTML = codiceRandom
 
 
+
+
+
+// controllo dati
+while ((isNaN(kilometri))) {
+    kilometri = prompt("Carattere non consentito. Riprovare");
+}
+while ((isNaN(eta))) {
+    eta = prompt("Carattere non consentito. Riprovare");
+}
 
 
 
 
 //stampa del biglietto 
-if (eta <= 17) {
-    console.log('il prezzo del biglietto è ' + scontoMinorenni);
-    document.getElementById('prezzo').innerHTML = scontoMinorenni + '€'
+if (eta < 18) {
+    prezzo *= 0.8;
 } else if (eta >= 65) {
-    console.log('il prezzo del biglietto è ' + scontoOver65);
-    document.getElementById('prezzo').innerHTML = scontoOver65 + '€'
-} else {
-    console.log('il prezzo del biglietto è ' + prezzoIntero);
-    document.getElementById('prezzo').innerHTML = prezzoIntero + '€'
-}
+    prezzo *= 0.6;
+} 
 
 
 
 
+// output
+document.getElementById('nome').innerHTML = nomePasseggero
+document.getElementById('km').innerHTML = kilometri + ' km'
+document.getElementById('età').innerHTML = eta
+document.getElementById('codice').innerHTML = codiceRandom
 
+document.getElementById('prezzo').innerHTML = prezzo + '€'
